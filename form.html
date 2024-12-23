@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: grey;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px black;
+            max-width: 600px;
+            margin: auto;
+        }
+        fieldset {
+            border: 1px solid silver;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            display: block;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+            margin-right: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button[type="submit"] {
+            background-color: green;
+            color: white;
+        }
+        button[type="reset"] {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Форма регистрации</h2>
+
+        <fieldset>
+            <legend>Основная информация</legend>
+            <label for="fullname">Полное имя:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmpassword">Подтвердите пароль:</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+            <label>Пол:</label>
+            <input type="radio" id="male" name="gender" value="Мужской">
+            <label for="male">Мужской</label>
+            <input type="radio" id="female" name="gender" value="Женский">
+            <label for="female">Женский</label>
+            <input type="radio" id="other" name="gender" value="Другой">
+            <label for="other">Другой</label>
+
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate">
+        </fieldset>
+
+        <fieldset>
+            <legend>Информация об адресе</legend>
+            <label for="address">Улица, дом:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <label for="country">Страна:</label>
+            <select id="country" name="country">
+                <option value="Россия">Россия</option>
+                <option value="США">США</option>
+                <option value="Канада">Канада</option>
+                <option value="Германия">Германия</option>
+                <option value="Франция">Франция</option>
+            </select>
+
+            <label for="city">Город:</label>
+            <input type="text" id="city" name="city">
+
+            <label for="postalcode">Почтовый индекс:</label>
+            <input type="number" id="postalcode" name="postalcode">
+        </fieldset>
+
+        <fieldset>
+            <legend>Предпочтения</legend>
+            <label>Предпочтительный метод связи:</label>
+            <input type="checkbox" id="emailcontact" name="contactmethod" value="Email">
+            <label for="emailcontact">Email</label>
+            <input type="checkbox" id="phonecontact" name="contactmethod" value="Телефон">
+            <label for="phonecontact">Телефон</label>
+            <input type="checkbox" id="mailcontact" name="contactmethod" value="Почта">
+            <label for="mailContact">Почта</label>
+
+            <label for="favoritecolor">Любимый цвет:</label>
+            <input type="color" id="favoritecolor" name="favoritecolor">
+        </fieldset>
+
+        <fieldset>
+            <legend>Дополнительная информация</legend>
+            <label for="profileimage">Загрузите изображение профиля:</label>
+            <input type="file" id="profileimage" name="profileimage" accept=".jpg, .png">
+
+            <label for="howdidyouhear">Как вы узнали о нас?</label>
+            <select id="howdidyouhear" name="howdidyouHear">
+                <option value="Интернет">Интернет</option>
+                <option value="Друзья">Друзья</option>
+                <option value="Реклама">Реклама</option>
+                <option value="Другое">Другое</option>
+            </select>
+
+            <label for="comments">Отзывы/Комментарии:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <label for="website">Ваш веб-сайт:</label>
+            <input type="url" id="website" name="website">
+
+            <label for="experience">Ваш уровень опыта:</label>
+            <input type="range" id="experience" name="experience" min="1" max="10" value="5" oninput="displayValue.value=experience.value">
+            <output id="displayValue">5</output>
+        </fieldset>
+
+        <button type="submit">Отправить</button>
+        <button type="reset">Сбросить</button>
+    </form>
+</body>
+</html>
